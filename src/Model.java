@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -14,6 +15,18 @@ import java.util.Scanner;
             String hex = "";
             String result = new String();
 
+          /*  int Answer = JOptionPane.showConfirmDialog(null,"Vill du krypteria informationen från minfil.txt?");
+
+            if(Answer == 1) {
+                message = JOptionPane.showInputDialog("Skriv din info här:");
+            }
+
+*/
+            int key = JOptionPane.showConfirmDialog(null,"Vill du välja nyckeln?");
+
+            if (key == 0){
+                int k = JOptionPane.showInputDialog("Skriv här?");
+            }
 
             FileReader file = new FileReader("minfil.txt");
 
@@ -22,12 +35,12 @@ import java.util.Scanner;
             String line = "";
             Scanner scanner = new Scanner(bufferedreader);
 
-
-            while (scanner.hasNextLine()) {
-                //System.out.println(scanner.nextLine());
-                message = message + scanner.nextLine();
-            }
-
+        //    if(Answer != 1) {
+                while (scanner.hasNextLine()) {
+                    //System.out.println(scanner.nextLine());
+                    message = message + scanner.nextLine();
+                }
+        //    }
 
             bufferedreader.close();
             System.out.println(message);
